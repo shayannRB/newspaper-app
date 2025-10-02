@@ -48,11 +48,11 @@ class SignUpPageView(TestCase):
             {
                 "username" : 'testuser',
                 'email' : 'testmail@gmail.com',
-                'password1' : 'testpass',
-                'password2' : 'testpass'          
+                'password1' : 'Testpass1234@pass',
+                'password2' : 'Testpass1234@pass'          
             }
         )
-        self.assertEqual(response.status_code, 200)							         
+        self.assertEqual(response.status_code, 302)							         
         self.assertEqual(get_user_model().objects.all()[0].username, 'testuser')							         
-        self.assertEqual(get_user_model().objects.all().counts(), 1)							         
+        self.assertEqual(get_user_model().objects.all().count(), 1)							         
         self.assertEqual(get_user_model().objects.all()[0].email, 'testmail@gmail.com')							         

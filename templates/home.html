@@ -4,7 +4,7 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-<p>Hi {{user.username}}</p>
+<p>Hi {{user.username}} your age is {{ user.age }}</p>
 <form method="post" action="{% url 'logout' %}">
       {% csrf_token %}
     <button type="submit" >Logout</button>
